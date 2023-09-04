@@ -1,0 +1,10 @@
+importFrom("pROC", "roc")
+importFrom("grDevices", "colorRampPalette")
+importFrom("corrplot", "colorlegend")
+importFrom("graphics", "abline", "legend", "par", "lines", "points", "text","arrows","axis")
+importFrom("stats", "pnorm", "qnorm", "var","runif")
+importFrom("utils", "tail")
+
+export(amd)
+export(varoc)
+export(jdp)
