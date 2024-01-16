@@ -8,8 +8,6 @@ jdp=function(fit,
   set.seed(seed)
 
   fpf=fit$fpf
-  pauc=fit$pauc
-  piamd=fit$piamd$iamd
 
   #1. data
   y=fit$df$x #x is plotted as y-value
@@ -18,13 +16,14 @@ jdp=function(fit,
   y0=y[d==0]
 
   #2. th at fpf
-  res=fit$res
-  res.fpf=res[tail(which(res$fpf>=fpf),1),]
-  th=res.fpf$th
-  tpf=res.fpf$tpf
-  amd=res.fpf$amd
-  tpm=res.fpf$tpm
-  fpm=res.fpf$fpm
+  res=fit$amd
+
+  th=res$th
+  tpf=res$tpf
+  fpf=res$fpf
+  tpm=res$tpm
+  fpm=res$fpm
+  amd=res$amd
 
   #3. plot
   #3.1. base plot
@@ -69,15 +68,11 @@ jdp=function(fit,
     #graphics::legend(legend,paste0(tpf.text,"\n",amd.text),bty='n',cex=cex.legend)
 
     tpf.text=paste0("TPF=",format(round(tpf,2),nsmall=2))
-    pauc.text=paste0("PAUC=",format(round(pauc,2),nsmall=2))
+    fpf.text=paste0("FPF=",format(round(fpf,2),nsmall=2))
     amd.text=paste0("AMD=",format(round(amd,2),nsmall=2))
-    piamd.text=paste0("PIAMD=",format(round(piamd,2),nsmall=2))
     legend(legend,paste0(tpf.text,"\n",
-                         pauc.text,"\n","\n",
-                         amd.text,"\n",
-                         piamd.text,"\n"
+                         fpf.text,"\n",
+                         amd.text,"\n"
     ),bty='n',cex=cex.legend)
   }
-
-  return(fit)
 }

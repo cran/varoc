@@ -38,7 +38,7 @@ cex.main=1,cex.pt=1.5,cex.lab=1,cex.axis=1,cex.legend=1,digits=2)
 \author{Yunro Chung [aut, cre]}
 
 \examples{
-set.seed(3)
+set.seed(1)
 
 n1=50
 n0=50
@@ -57,7 +57,6 @@ varoc(fit1)
 #1.3. jdp
 jdp(fit1)
 
-
 #2. marker 2 (useful biomarker)
 y2=y1
 x2=abs(c(rnorm(n1,1,1),rnorm(n0,0,1)))
@@ -66,10 +65,11 @@ x2=abs(c(rnorm(n1,1,1),rnorm(n0,0,1)))
 fit2=amd(y=y2,x=x2,fpf=0.3)
 
 #2.2. varoc for marker 1 vs marker 2
-amd.min=min(c(fit1$res$amd,fit2$res$amd))
-amd.max=max(c(fit1$res$amd,fit2$res$amd))
-varoc(fit1,amd.min=amd.min,amd.max=amd.max)
-varoc(fit2,amd.min=amd.min,amd.max=amd.max)
+mzr.min=min(c(fit1$res$amd,fit2$res$amd))
+mzr.max=max(c(fit1$res$amd,fit2$res$amd))
+
+varoc(fit1,mzr="AMD",mzr.min=mzr.min,mzr.max=mzr.max)
+varoc(fit2,mzr="AMD",mzr.min=mzr.min,mzr.max=mzr.max)
 
 #2.3. varoc for marker 1 vs marker 2
 min=min(c(x1,x2))

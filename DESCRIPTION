@@ -1,8 +1,8 @@
 Package: varoc
 Type: Package
 Title: Value Added Receiver Operating Characteristics Curve
-Version: 0.1.0
-Date: 2023-09-01
+Version: 0.2.0
+Date: 2024-01-16
 Authors@R: 
   c(person(given = "Yunro",
            family = "Chung",
@@ -15,8 +15,8 @@ License: GPL (>= 2)
 Depends: R (>= 4.2.0), pROC, corrplot, grDevices, graphics, stats,
         utils
 NeedsCompilation: no
-Packaged: 2023-09-02 18:36:07 UTC; ychung36
+Packaged: 2024-01-16 14:57:17 UTC; roy
 Author: Yunro Chung [aut, cre] (<https://orcid.org/0000-0001-9125-9277>)
 Maintainer: Yunro Chung <yunro.chung@asu.edu>
 Repository: CRAN
-Date/Publication: 2023-09-04 09:10:02 UTC
+Date/Publication: 2024-01-16 15:10:02 UTC
